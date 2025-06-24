@@ -83,8 +83,7 @@ const Page4 = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const isMobile = window.innerWidth < 640 // Tailwind sm: < 640px
-
+      const isMobile = window.innerWidth < 640 
       const h1 = heading1Ref.current
       const h2 = heading2Ref.current
       const h3 = heading3Ref.current
@@ -96,8 +95,6 @@ const Page4 = () => {
         scrub: true,
         onUpdate: (self) => {
           const progress = self.progress
-
-          // Responsive shift values
           const shift = isMobile ? 50 : 200
 
           gsap.set(h1, { x: progress * shift })
@@ -113,7 +110,7 @@ const Page4 = () => {
   return (
     <div
       ref={sectionRef}
-      className="h-screen w-full px-4 sm:px-8 md:px-16 flex flex-col justify-center items-center gap-4 sm:gap-6 overflow-hidden text-center"
+      className=" w-full px-4 sm:px-8 md:px-16 flex flex-col justify-center items-center gap-4 sm:gap-6 overflow-hidden text-center"
     >
       <h1
         ref={heading1Ref}
