@@ -46,10 +46,10 @@ const Page1 = () => {
 
      <div className="
   w-full
-  h-[24 0vh] sm:h-[80vh] md:h-[180vh]
-  sm:w-full
+  h-[60vh] sm:h-[60vh] md:h-[180vh]
+  sm:w-screen
   bg-[#792822]
-  mt-[70%] sm:mt-[100%] md:mt-[30%]
+  mt-[70%] sm:mt-[100%] md:mt-[35%]
   absolute
   py-16 sm:py-20 px-4 sm:px-6
   overflow-hidden
