@@ -1,9 +1,6 @@
-
-
 "use client";
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-
 const ProjectCard = ({ img, title }) => {
   const wrapperRef = useRef(null);
 
@@ -15,21 +12,30 @@ const ProjectCard = ({ img, title }) => {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
 
   return (
-    <div ref={wrapperRef} className="flex flex-col">
-      <motion.div
-        style={{ scale }}
+    <div className="flex flex-col">
+      {/* Scroll Target Wrapper */}
+      <div
+        ref={wrapperRef}
         className="w-full h-[250px] sm:h-[300px] md:h-[400px] overflow-hidden rounded-xl shadow-lg group"
       >
-        <img
-          src={img}
-          alt={title}
-          className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
-        />
-      </motion.div>
-      <h2 className="mt-4 text-xl sm:text-2xl font-semibold text-[#333]">{title}</h2>
+        {/* Image is inside motion.div for scroll-based scale */}
+        <motion.div style={{ scale }} className="w-full h-full">
+          <img
+            src={img}
+            alt={title}
+            className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+          />
+        </motion.div>
+      </div>
+
+      {/* Title */}
+      <h2 className="mt-4 text-xl sm:text-2xl font-semibold text-[#333]">
+        {title}
+      </h2>
     </div>
   );
 };
+
 
 const Page3 = () => {
   const projects = [
@@ -52,7 +58,7 @@ const Page3 = () => {
   ];
 
   return (
-    <div className="min-h-screen w-full px-4 sm:px-10 md:px-20 lg:px-60 py-20">
+    <div className="min-h-screen w-full overflow-hidden px-4 sm:px-10 md:px-20 lg:px-60 py-20">
       <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-16 text-[#792822] text-center sm:text-left">
         SELECTED PROJECTS
       </h1>

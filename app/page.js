@@ -12,7 +12,7 @@ export const metadata = {
 
 const Page = () => {
   return (
-    <div className='w-full  min-h-screen bg-[#F7F5E9]'>
+    <div className='w-full overflow-hidden  min-h-screen bg-[#F7F5E9]'>
       <Header/>
       <Page1 /> 
       <Page2/>
