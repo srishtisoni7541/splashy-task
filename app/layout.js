@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import SmoothScrollWrapper from "./components/ClientWrapper";
 // import ClientWrapper from "./components/ClientWrapper"; 
 
 const geistSans = Geist({
@@ -22,7 +23,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
     
-          {children}
+        <SmoothScrollWrapper>
+            {children}
+        </SmoothScrollWrapper>
 
       </body>
     </html>
